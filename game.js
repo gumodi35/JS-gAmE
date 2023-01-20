@@ -31,15 +31,17 @@ function iniciarJuego() {
   canvas.setAttribute('width', tamañoCanvas);
   canvas.setAttribute('height', tamañoCanvas);
   
-  const elementsTamaño = tamañoCanvas / 10;
+  const elementsTamaño = (tamañoCanvas / 10) - 1;
 
   console.log({tamañoCanvas, elementsTamaño})
 
   game.font = elementsTamaño + 'px Verdana';
   game.textAlign = 'end';
 
-  for (let i = 1; i <= 10; i++) {
-    game.fillText(emojis['X'], elementsTamaño, elementsTamaño * i);
+  for (let i = 0; i <= 10; i++) {
+    for(let z = 1; z < 11; z++){
+      game.fillText(emojis['X'], elementsTamaño * i, elementsTamaño * z);
+    }
   }
 
   /*   game.fillRect(50,50,50,50)
